@@ -1,23 +1,15 @@
 package main
 
-import "github.com/hajimehoshi/ebiten/v2"
+import (
+	"game-go/game"
 
-type Game struct {
-}
-
-//
-func (g *Game) Update() error {
-	return nil
-}
-
-func (g *Game) Draw(screen *ebiten.Image) {
-
-}
-
-func (g *Game) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int) {
-	return outsideWidth, outsideHeight
-}
+	"github.com/hajimehoshi/ebiten/v2"
+)
 
 func main() {
-
+	g := game.NewGame()
+	err := ebiten.RunGame(g)
+	if err != nil {
+		panic(err)
+	}
 }
